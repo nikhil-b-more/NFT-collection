@@ -101,7 +101,7 @@ export default function Home() {
       setPresaleStarted(true);
       setLoading(false);
 
-      let presaleTime = 20;
+      let presaleTime = 1200;
       const countDown = setInterval(() => {
         const minute = Math.floor(presaleTime / 60);
         let seconds = presaleTime % 60;
