@@ -26,23 +26,22 @@ export default function Home() {
   const [seconds, setSeconds] = useState(0);
 
   const publicMint = async () => {
-    setLoading(true);
     try {
       const signer = await getProviderOrSigner();
       const txnContract = new Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
 
       const txn = await txnContract.mint({ value: utils.parseEther("0.01") });
+      setLoading(true);
       await txn.wait();
 
-      console.log("minted in public");
+      setLoading(false);
+      // console.log("minted in public");
     } catch (error) {
       console.error(error);
     }
-    setLoading(false);
   };
 
   const presaleMint = async () => {
-    setLoading(true);
     try {
       const signer = await getProviderOrSigner();
       const txnContract = new Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
@@ -50,12 +49,13 @@ export default function Home() {
       const txn = await txnContract.presaleMint({
         value: utils.parseEther("0.01"),
       });
+      setLoading(true);
       await txn.wait();
-      console.log("minted in presale");
+      setLoading(false);
+      // console.log("minted in presale");
     } catch (error) {
       console.error(error);
     }
-    setLoading(false);
   };
 
   const checkIfPresaleEnded = async () => {
@@ -70,7 +70,7 @@ export default function Home() {
       );
 
       setPresaleEnded(hasPresaleEnded);
-      console.log(hasPresaleEnded);
+      // console.log(hasPresaleEnded);
     } catch (error) {
       console.error(error);
     }
@@ -83,7 +83,7 @@ export default function Home() {
 
       const txn = await txnContract.presaleStarted();
       setPresaleStarted(txn);
-      console.log(txn);
+      // console.log(txn);
       return txn;
     } catch (error) {
       console.error(error);
@@ -91,12 +91,12 @@ export default function Home() {
   };
 
   const startPresale = async () => {
-    setLoading(true);
     try {
       const signer = await getProviderOrSigner(true);
       const nftContract = new Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
 
       const txn = await nftContract.startPresale();
+      setLoading(true);
       await txn.wait();
       setPresaleStarted(true);
       setLoading(false);
@@ -129,11 +129,11 @@ export default function Home() {
 
       const owner = await txnContract.owner();
       const user = await signer.getAddress();
-      console.log(owner);
-      console.log(user);
+      // console.log(owner);
+      // console.log(user);
       if (owner.toLowerCase() == user.toLowerCase()) {
         setOwner(true);
-        console.log("owner set to true");
+        // console.log("owner set to true");
       }
     } catch (error) {
       console.error(error);
@@ -151,7 +151,7 @@ export default function Home() {
 
       const numTokenIds = await txnContract.tokenIds();
       setNumTokensMinted(numTokenIds.toString());
-      console.log(Math.floor(numTokenIds), "token");
+      // console.log(Math.floor(numTokenIds), "token");
     } catch (error) {
       console.error(error);
     }
