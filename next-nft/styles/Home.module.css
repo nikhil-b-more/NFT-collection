@@ -1,0 +1,150 @@
+@import "https://fonts.googleapis.com/css?family=Trirong";
+
+.main{
+  background-image: linear-gradient(to top, rgba(52, 52, 54, 0.52), rgba(14, 13, 13, 0.73)),url("../public/bg-main.jpg");
+  /* height: 100vh; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.nav{
+  
+  background-color: rgba(2, 2, 2, 0.5);
+  width: 100%;
+  margin: 1% 0 0 0;
+  height: 6vh;
+  display: flex;
+  /* inline-size: 100%; */
+  flex-direction: row;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: sticky;
+  /* justify-items: center; */
+}
+
+.nh4{
+  
+  /* margin-right: 10%; */
+  color: rgb(250, 250, 250);
+  background-color: rgba(12, 12, 12, 0.5);
+  border-radius: 1cm;
+  padding: 0.4% 2%;
+  margin: 1% 20% 1% 5%;
+
+}
+  
+.nexon2{
+  color: rgb(250, 250, 250);
+  background-color: rgba(21, 17, 233, 0.5);
+  border-radius: 1cm;
+  padding: 0.4% 2%;
+  margin: 1% 15% 1% 1%;
+	font: inherit;
+	cursor: pointer;
+	border: none;
+
+}  
+.mainContainer{
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  flex-direction: row;
+  width: 60%;
+  height: fit-content;
+  padding: 3%;
+
+}
+.description2{
+  border: 0.1cm;
+  border-color: white;
+  border-style: solid;
+  padding: 1%;
+}
+  
+
+
+.title{
+  color: rgb(255, 255, 255);
+  /* margin: 1% 0 10% 0    ; */
+}
+.count{
+  font-family: trirong;
+  font-size: 50px;
+  background-color: rgb(0, 0, 0, .3);
+  padding: 2%;
+  border-radius: 0.7cm;
+  margin: 0 ;
+}
+
+
+
+
+.nexon{
+  color: rgb(250, 250, 250);
+  background-color: rgba(21, 17, 233, 0.5);
+  border-radius: 0.5cm;
+  padding: 0.4% 2%;
+  margin: 1% 5% 1% 1%;
+	font: inherit;
+	cursor: pointer;
+	border: solid;
+  
+  border-color: #1c1641;
+}
+.nexon2:hover{
+  background-color: white;
+  color: #2501f3;
+  border: #2501f3;
+  font-weight:bolder;
+}
+.nexon:hover{
+  
+  background-color: transparent;
+  
+}
+  
+  
+.box1{
+  border-radius: 0.5cm;
+  background-color: rgba(2, 2, 2, 0.5);
+  height: 80%;
+  padding: 3%;
+  margin: 0 3% 0 0 ;
+  font-size: 20px;
+}
+
+.description{
+  margin: 1%;
+}
+.image {
+opacity: 0.5;
+
+animation-name: case;
+animation-duration: 3s;
+/* animation-delay: -2s; */
+animation-iteration-count: infinite;
+animation-direction: alternate;
+
+}
+
+
+@keyframes case{
+  from{opacity: 0.3;}
+  to{opacity: 1}
+}
+
+.renderBody{
+  height: 10%;
+  width: 40%;
+}
+
+.footer{
+  height: 10%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
