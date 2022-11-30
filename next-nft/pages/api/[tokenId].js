@@ -9,6 +9,6 @@ export default function handler(req, res) {
   return res.json({
     name: name + "Crypto Dev #" + tokenId,
     description: description,
-    image: img,
+    image: image_url + tokenId + ".png",
   });
 }
