@@ -1,25 +1,17 @@
-var {ethers } =  require("hardhat"); 
-const hre = require("hardhat");
-const { WHITELIST_CONTRACT_ADDRESS, METADATA_URL } = require("../constants");
+import { ethers } from "hardhat";
+
+import { WHITELIST_CONTRACT_ADDRESS, METADATA_URL } from "../constants";
 async function main() {
-  
-
   const contract = await ethers.getContractFactory("CryptoDevs");
-
 
   const deployContract = await contract.deploy(
     METADATA_URL,
     WHITELIST_CONTRACT_ADDRESS
   );
-    await deployContract.deployed();
- 
-  console.log(
-    "Crypto Devs Contract Address:",
-    deployContract.address
-  );
-  
-}
+  await deployContract.deployed();
 
+  console.log("Crypto Devs Contract Address:", deployContract.address);
+}
 
 main().catch((error) => {
   console.error(error);
