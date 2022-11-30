@@ -1,6 +1,6 @@
 import { ethers } from "hardhat";
-
 import { WHITELIST_CONTRACT_ADDRESS, METADATA_URL } from "../constants";
+
 async function main() {
   const contract = await ethers.getContractFactory("CryptoDevs");
 
