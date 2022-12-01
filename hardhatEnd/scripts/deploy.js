@@ -4,9 +4,9 @@ const { WHITELIST_CONTRACT_ADDRESS, METADATA_URL } = require("../constants");
 async function main() {
   const contract = await ethers.getContractFactory("CryptoDevs");
   console.log("contract get");
-  const whitelistContract = "0xc54539699Fb03c1aD1097cd3cD1e1180e1173d3B";
+  const whitelistContract = WHITELIST_CONTRACT_ADDRESS;
   // URL from where we can extract the metadata for a Crypto Dev NFT
-  const metadataURL = "https://nft-collection-beryl-iota.vercel.app/";
+  const metadataURL = METADATA_URL;
   console.log(whitelistContract, metadataURL);
   const deployContract = await contract.deploy(metadataURL, whitelistContract);
   await deployContract.deployed();
